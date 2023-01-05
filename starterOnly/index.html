@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/x-icon" href="favicon.png">
   </head>
   <body>
     <div class="topnav" id="myTopnav">
@@ -54,7 +55,7 @@
 
       <div class="bground">
         <div class="content">
-          <span class="close" onclick = "unLaunchModal()" >
+          <span class="close" onclick = "closeModal()" >
           </span>
           <div class="modal-body">
             <form
@@ -65,49 +66,54 @@
             >
               <div
                 class="formData">
-                <label>Prénom</label><br>
+                <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
+                  required
                 /><br>
               </div>
               <div
                 class="formData">
-                <label>Nom</label><br>
+                <label for="last">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
+                  minlength="2"
+                  required
                 /><br>
               </div>
               <div
                 class="formData">
-                <label>E-mail</label><br>
+                <label for="email" required>E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
+                  required
                 /><br>
               </div>
               <div
                 class="formData">
-                <label>Date de naissance</label><br>
+                <label for="date" required>Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  required
                 /><br>
               </div>
               <div
                 class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div

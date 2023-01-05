@@ -1,9 +1,9 @@
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
-    x.className += " responsive";
+      x.className += " responsive";
   } else {
-    x.className = "topnav";
+      x.className = "topnav";
   }
 }
 
@@ -20,11 +20,71 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-function unLaunchModal() {
+// close the modal form with the cross
+function closeModal() {
   modalbg.style.display = "none";
 }
 
-//to close the modal with the cross
-//try to disable the function launchModal ?
+
+
+/*
+function verificator(){
+  if (first => 2){
+    let validationCount = i++;
+  } else {
+    let validationCount = i--;
+  };
+
+  if (last => 2){
+    let validationCount = i++;
+  } else {
+    let validationCount = i--;
+  };
+
+  if (email => 4){
+    let validationCount = i++;
+  } else {
+    let validationCount = i--;
+  };
+
+  if (birthdate == 10){
+    let validationCount = i++;
+  } else {
+    let validationCount = i--;
+  };
+
+  if (radio => checked){
+    let validationCount = i++;
+  } else {
+    let validationCount = i--;
+  };
+
+  if (document.getElementsByClassName("checkbox1") = checked){
+    let validationCount = i++;
+  } else {
+    let validationCount = i--;
+  };
+}
+console.log(validationCount);
+
+if (ValidationCount = 6){
+  let validation = true;
+} else {
+  let validation = false;
+  console.log("Il y a une erreur de comptage")
+}
+
+console.log("Tous les passagers sont embarqués !");
+
+
+function validate() {
+  if (validation = true) {
+    console.log("Merci pour votre inscription");
+  } else {
+    console.log("Il y a une erreur");
+  }
+}
+*/
+
 
 
