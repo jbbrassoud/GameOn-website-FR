@@ -20,4 +20,11 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+function unLaunchModal() {
+  modalbg.style.display = "none";
+}
+
+//to close the modal with the cross
+//try to disable the function launchModal ?
+
 

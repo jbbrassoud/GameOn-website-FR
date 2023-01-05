@@ -111,7 +111,7 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
+  
 
 }
 
@@ -405,7 +405,8 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  min-height: 33vh;
+  max-height: 100vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
