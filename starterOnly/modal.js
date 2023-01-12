@@ -28,8 +28,8 @@ function closeModal() {
 // Form
 
 const form = document.getElementById('form')
-const firstNameInput = document.querySelector('#firstname');
-const lastNameInput = document.querySelector('#lastname');
+const firstNameInput = document.querySelector('#first');
+const lastNameInput = document.querySelector('#last');
 const emailInput = document.querySelector('#email');
 const birthDateInput = document.querySelector('#birthdate');
 const quantityInput = document.querySelector('#quantity');
