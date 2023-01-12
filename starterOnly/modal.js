@@ -25,7 +25,33 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
+// Form
 
+const form = document.getElementById('form')
+const firstNameInput = document.querySelector('#firstname');
+const lastNameInput = document.querySelector('#lastname');
+const emailInput = document.querySelector('#email');
+const birthDateInput = document.querySelector('#birthdate');
+const quantityInput = document.querySelector('#quantity');
+const locationInputs = Array.from(document.querySelectorAll('.location-input'));
+const conditionsInput = document.querySelector('#checkbox1');
+const newsletterInput = document.querySelector('#checkbox2');
+
+// Regexp 
+const nameRegExp = /^[a-zéèôöîïûùü' -]{2,50}$/i;
+const emailRegExp = /^[a-z0-9.-_]+[@]{1}[a-z0-9.-_]+[.]{1}[a-z]{2,10}$/i;
+
+// Listeners
+firstNameInput.addEventListener(() => {
+  checkInput(firstNameInput, nameRegExp);
+});
+
+
+// Fonction
+
+// Afficher erreur
+
+// Validateur
 
 /*
 function verificator(){
@@ -53,7 +79,7 @@ function verificator(){
     let validationCount = i--;
   };
 
-  if (radio => checked){
+  if (radio = checked.input.radio){
     let validationCount = i++;
   } else {
     let validationCount = i--;
