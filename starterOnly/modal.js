@@ -26,7 +26,6 @@ function closeModal() {
 }
 
 // Form
-
 const form = document.getElementById('form')
 const firstNameInput = document.querySelector('#first');
 const lastNameInput = document.querySelector('#last');
@@ -38,16 +37,15 @@ const conditionsInput = document.querySelector('#checkbox1');
 const newsletterInput = document.querySelector('#checkbox2');
 
 // Regexp 
-const nameRegExp = /^[a-zéèôöîïûùü' -]{2,50}$/i;
-const emailRegExp = /^[a-z0-9.-_]+[@]{1}[a-z0-9.-_]+[.]{1}[a-z]{2,10}$/i;
-
-// Listeners
-firstNameInput.addEventListener(() => {
-  checkInput(firstNameInput, nameRegExp);
-});
-
+const nameRegExp = "/^[a-zéèôöîïûùü' -]{2,50}$/i";
+const emailRegExp = "/^[a-z0-9.-_]+[@]{1}[a-z0-9.-_]+[.]{1}[a-z]{2,10}$/i";
 
 // Fonction
+
+function validate() {
+    console.log("Merci pour votre inscription");
+  
+}
 
 // Afficher erreur
 
@@ -55,7 +53,7 @@ firstNameInput.addEventListener(() => {
 
 /*
 function verificator(){
-  if (first => 2){
+  if (first => 2.length.first){
     let validationCount = i++;
   } else {
     let validationCount = i--;
@@ -103,14 +101,8 @@ if (ValidationCount = 6){
 console.log("Tous les passagers sont embarqués !");
 
 
-function validate() {
-  if (validation = true) {
-    console.log("Merci pour votre inscription");
-  } else {
-    console.log("Il y a une erreur");
-  }
-}
 */
+
 
 
 
