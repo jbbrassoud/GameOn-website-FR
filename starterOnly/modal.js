@@ -66,10 +66,10 @@ formScan.forEach((input) => {
   })
 })
 */
-
+// Afficher erreur
 function errorVerificator(){
-
   console.log('error message');
+  //onsubmit(SubmitEvent) = null;
 }
 
 function verificator(){
@@ -96,7 +96,6 @@ function verificator(){
   } else {
     console.log("email is good");
   }
-
   //chercher à trouver nouvelle date ?
   if (birthDateInput.validity.typeMismatch != true){
     console.log("date is good");
@@ -129,11 +128,16 @@ function verificator(){
   }
 }
 
+// Validateur
 
 function validate() {
   verificator ();
 
-  if(errorVerificator()){
+  for (i = 0; i = errorVerificator(); i++){
+    errorVerificator(i);
+  }
+
+  if(errorVerificator(i)){
     window.alert("Erreur lors de l'inscription, veuillez remplir tous les champs rquis");
     
   } else {
@@ -141,11 +145,5 @@ function validate() {
     console.log("Merci pour votre inscription");
   }
 }
-
-// Afficher erreur
-
-// Validateur
-
-
 
 
