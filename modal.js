@@ -30,6 +30,9 @@ const errorDisplayQuantity = document.querySelector('.formErrorQuantity');
 const errorDisplayLocation = document.querySelector('.formErrorLocation');
 const errorDisplayConditions = document.querySelector('.formErrorConditions');
 const thanksCall = document.querySelector('.thanks');
+// Récupération de tous les éléments de formulaire
+const inputs = document.querySelectorAll("input");
+
 
 // Regexp 
 const nameRegExp = "/^[a-zéèôöîïûùü' -]{2,50}$/i";
