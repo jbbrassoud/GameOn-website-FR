@@ -48,6 +48,7 @@ img {
   margin: 5px;
   text-decoration: none;
   font-size: 20px;
+  font-family: Roboto, sans-serif;
 }
 
 .topnav a:hover {
@@ -60,7 +61,6 @@ img {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
-  text-decoration: underline;
 }
 
 .topnav .icon {
@@ -149,7 +149,6 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
-  text-align: left;
 }
 
 .modal-body {
@@ -221,7 +220,6 @@ input[data-error]::after {
   left: -30px;
   top: -1px;
   transition: 0.3s;
-  text-align: start;
 }
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
@@ -384,8 +382,6 @@ input[data-error]::after {
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
-
-
 .hero-content {
   padding: 51px 67px;
   grid-column: span 4;
@@ -393,7 +389,7 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 200px;
+  min-width: 424px;
 }
 .hero-content::after {
   content: "";
@@ -401,7 +397,7 @@ input[data-error]::after {
   height: 100%;
   background: #232323;
   position: absolute;
-  right: -180px;
+  right: -80px;
   top: 0;
 }
 .hero-content > * {
@@ -414,7 +410,7 @@ input[data-error]::after {
   white-space: nowrap;
 }
 .hero-text {
-  width: 200%;
+  width: 146%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -543,16 +539,6 @@ footer {
     display: block;
     text-align: left;
   }
-  .topnav a.icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #f00;
-  }
-  .hero-headline{
-    font-size: 1.6em;
-    font-weight: 600;
-  }
 }
 
 
@@ -568,18 +554,27 @@ footer {
     width: 10em;
   }
   .topnav a {display: none;}
-
+  .topnav a.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f00;
+    
+  }
   .hero-content{
     min-width: auto;
     padding: 0;
   }
-
+  .hero-headline{
+    font-size: 1.5em;
+  }
 
   .hero-text{
     width: 100%;
     font-size: 0.6em;
     word-wrap: normal;
   }
+
   .bground{
     height: 100vh;
     width: 100vw;
@@ -600,10 +595,11 @@ footer {
   .thanks{
     flex-direction: column;
     justify-content: space-between;
+    
   }
   .thanks p{
     height: 80vh;
-    padding-top: 45%;
+    text-align: end;
   }
 
 } 
