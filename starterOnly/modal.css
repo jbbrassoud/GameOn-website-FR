@@ -493,6 +493,14 @@ footer {
   transition-duration: 1s;
 }
 
+.thanks{
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+
+}
+
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;

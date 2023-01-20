@@ -22,13 +22,14 @@ const quantityInput = document.querySelector('#quantity');
 const locationInputs = document.querySelectorAll('.checkbox-input');
 const conditionsInput = document.querySelector('#checkbox1');
 const newsletterInput = document.querySelector('#checkbox2');
-const ErrorDisplayFirst = document.querySelector('.formErrorFirst');
-const ErrorDisplayLast = document.querySelector('.formErrorLast');
-const ErrorDisplayEmail = document.querySelector('.formErrorEmail');
-const ErrorDisplayBirthdate = document.querySelector('.formErrorBirthdate');
-const ErrorDisplayQuantity = document.querySelector('.formErrorQuantity');
-const ErrorDisplayLocation = document.querySelector('.formErrorLocation');
-const ErrorDisplayConditions = document.querySelector('.formErrorConditions');
+const errorDisplayFirst = document.querySelector('.formErrorFirst');
+const errorDisplayLast = document.querySelector('.formErrorLast');
+const errorDisplayEmail = document.querySelector('.formErrorEmail');
+const errorDisplayBirthdate = document.querySelector('.formErrorBirthdate');
+const errorDisplayQuantity = document.querySelector('.formErrorQuantity');
+const errorDisplayLocation = document.querySelector('.formErrorLocation');
+const errorDisplayConditions = document.querySelector('.formErrorConditions');
+const thanksCall = document.querySelector('.thanks');
 
 // Regexp 
 const nameRegExp = "/^[a-zéèôöîïûùü' -]{2,50}$/i";
@@ -47,102 +48,81 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
-
-
-// Fonction
-
-
-/*Test de scan auto en fonction imbriquées.
-
-const formScan = document.querySelectorAll('input')
-
-formScan.forEach((input) => {
-  input.addEventListener("focus", input => {
-    if(querySelectorAll.input.willValidate == true){
-      console.log("ça va être valide")
-    } else {
-      querySelector.input.classList.add("inputError");
-    }
-  })
-})
-*/
-// Afficher erreur
-function errorVerificator(){
-  console.log('error message');
-  //onsubmit(SubmitEvent) = null;
-}
+//Verificateur
 
 function verificator(){
+  let ilYaUneErreur = false;
+
   if (firstNameInput.value.length >= 2){
     console.log("first is good");
-    ErrorDisplayFirst.style.display = "none";
+    errorDisplayFirst.style.display = "none";
   } else {
-    errorVerificator();
-    ErrorDisplayFirst.style.display = "block";
+    ilYaUneErreur = true;
+    errorDisplayFirst.style.display = "block";
     first.classList.add("inputError");
   }
   if (lastNameInput.value.length >= 2){
     console.log("last is good");
-    ErrorDisplayLast.style.display = "none";
+    errorDisplayLast.style.display = "none";
   } else {
+    ilYaUneErreur = true;
     errorVerificator();
-    ErrorDisplayLast.style.display = "block";
+    errorDisplayLast.style.display = "block";
   }
   //email - logique inversée car on cherche une erreur avec le Mismatch
   if (emailInput.validity.typeMismatch != false){
-    errorVerificator();
-    ErrorDisplayEmail.style.display = "block";
+    ilYaUneErreur = true;
+    errorDisplayEmail.style.display = "block";
     email.classList.add("inputError");
   } else {
     console.log("email is good");
   }
-  //chercher à trouver nouvelle date ?
-  if (birthDateInput.validity.typeMismatch != true){
+
+  if (!birthDateInput.validity.valueMissing){
     console.log("date is good");
   } else {
-    errorVerificator();
-    ErrorDisplayBirthdate.style.display = "block";
+    ilYaUneErreur = true;
+    errorDisplayBirthdate.style.display = "block";
     birthdate.classList.add("inputError");
   }
   if (quantityInput.value.length >= 1){
     console.log("quantity is good");
   } else {
-    errorVerificator();
-    ErrorDisplayQuantity.style.display = "block";
+    ilYaUneErreur = true;
+    errorDisplayQuantity.style.display = "block";
     quantity.classList.add("inputError");
   }
-  if (locationInputs.checked){
-  //if (location1.checked | location2.checked | location3.checked | location4.checked | location5.checked | location6.checked){
+  //if (locationInputs.checked){
+  if (location1.checked | location2.checked | location3.checked | location4.checked | location5.checked | location6.checked){
     console.log("location is good");
   } else {
-    errorVerificator();
-    ErrorDisplayLocation.style.display = "block";
+    ilYaUneErreur = true;
+    errorDisplayLocation.style.display = "block";
     location1.classList.add("inputError");
   }
   if (conditionsInput.checked != false){
     console.log("checked is good");
   } else {
-    errorVerificator();
-    ErrorDisplayConditions.style.display = "block";
+    ilYaUneErreur = true;
+    errorDisplayConditions.style.display = "block";
     checkbox1.classList.add("inputError");
   }
+
+  return ilYaUneErreur
 }
 
 // Validateur
 
 function validate() {
-  verificator ();
 
-  for (i = 0; i = errorVerificator(); i++){
-    errorVerificator(i);
-  }
-
-  if(errorVerificator(i)){
-    window.alert("Erreur lors de l'inscription, veuillez remplir tous les champs rquis");
-    
+  if(verificator()){
+    console.log("Erreur validator")
   } else {
-    window.alert('Merci, ' + firstNameInput.value + ' au tournoi de ' + locationInputs.value);
     console.log("Merci pour votre inscription");
+    document.getElementsByName('reserve')[0].style.display = "none";
+    thanksCall.style.display = "block";
+    document.getElementsByName('reserve')[0].reset();
+    document.getElementsByName('reserve')[0].style.display = "block";
   }
 }
 
