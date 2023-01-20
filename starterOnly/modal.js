@@ -120,9 +120,8 @@ function validate() {
   } else {
     console.log("Merci pour votre inscription");
     document.getElementsByName('reserve')[0].style.display = "none";
-    thanksCall.style.display = "block";
+    thanksCall.style.display = "flex";
     document.getElementsByName('reserve')[0].reset();
-    document.getElementsByName('reserve')[0].style.display = "block";
   }
 }
 
