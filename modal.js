@@ -69,8 +69,8 @@ function verificator(){
     errorDisplayLast.style.display = "none";
   } else {
     ilYaUneErreur = true;
-    errorVerificator();
     errorDisplayLast.style.display = "block";
+    last.classList.add("inputError");
   }
   //email - logique inversée car on cherche une erreur avec le Mismatch
   if (emailInput.validity.typeMismatch != false){
