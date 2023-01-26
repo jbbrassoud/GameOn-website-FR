@@ -57,7 +57,7 @@ function verificator(){
   let ilYaUneErreur = false;
 
   if (firstNameInput.value.length >= 2){
-    console.log("first is good");
+    first.classList.remove("inputError");
     errorDisplayFirst.style.display = "none";
   } else {
     ilYaUneErreur = true;
@@ -65,7 +65,7 @@ function verificator(){
     first.classList.add("inputError");
   }
   if (lastNameInput.value.length >= 2){
-    console.log("last is good");
+    last.classList.remove("inputError");
     errorDisplayLast.style.display = "none";
   } else {
     ilYaUneErreur = true;
@@ -73,17 +73,18 @@ function verificator(){
     last.classList.add("inputError");
   }
   //email - logique inversée car on cherche une erreur avec le Mismatch
-  if (emailInput.validity.typeMismatch != false){
+  if (!emailInput.validity.typeMismatch){
+    email.classList.remove("inputError");
+    errorDisplayEmail.style.display = "none";
+  } else {
     ilYaUneErreur = true;
     errorDisplayEmail.style.display = "block";
     email.classList.add("inputError");
-  } else {
-    console.log("email is good");
   }
 
  // if (!birthDateInput.validity.valueMissing !== false){
   if (birthDateInput.value !== ""){
-    console.log("date is good");
+    birthdate.classList.remove("inputError");
     errorDisplayFirst.style.display = "none";
   } else {
     ilYaUneErreur = true;
@@ -92,7 +93,8 @@ function verificator(){
   }
   
   if (quantityInput.value.length >= 1){
-    console.log("quantity is good");
+    quantity.classList.remove("inputError");
+    errorDisplayQuantity.style.display = "none";
   } else {
     ilYaUneErreur = true;
     errorDisplayQuantity.style.display = "block";
@@ -100,14 +102,16 @@ function verificator(){
   }
   //if (locationInputs.checked){
   if (location1.checked | location2.checked | location3.checked | location4.checked | location5.checked | location6.checked){
-    console.log("location is good");
+    location1.classList.remove("inputError");
+    errorDisplayLocation.style.display="none"
   } else {
     ilYaUneErreur = true;
     errorDisplayLocation.style.display = "block";
     location1.classList.add("inputError");
   }
   if (conditionsInput.checked != false){
-    console.log("checked is good");
+    checkbox1.classList.remove("inputError");
+    errorDisplayConditions.style.display = "none";
   } else {
     ilYaUneErreur = true;
     errorDisplayConditions.style.display = "block";
@@ -124,7 +128,7 @@ function validate() {
   if(verificator()){
     console.log("Erreur validator")
   } else {
-    console.log("Merci pour votre inscription");
+    console.log("La validation est bonne");
     document.getElementsByName('reserve')[0].style.display = "none";
     thanksCall.style.display = "flex";
     document.getElementsByName('reserve')[0].reset();
