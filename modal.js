@@ -82,7 +82,7 @@ function verificator(){
   }
 
  // if (!birthDateInput.validity.valueMissing !== false){
-  if (birthDateInput.value !== "2022-12-31"){
+  if (birthDateInput.value !== ""){
     console.log("date is good");
     errorDisplayFirst.style.display = "none";
   } else {
