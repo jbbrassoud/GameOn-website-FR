@@ -7,6 +7,7 @@ function editNav() {
   }
 }
 
+
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -73,7 +74,7 @@ function verificator(){
     last.classList.add("inputError");
   }
   //email - logique inversée car on cherche une erreur avec le Mismatch
-  if (!emailInput.validity.typeMismatch){
+  if (emailInput.validity.typeMismatch != true){
     email.classList.remove("inputError");
     errorDisplayEmail.style.display = "none";
   } else {
