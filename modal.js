@@ -81,13 +81,16 @@ function verificator(){
     console.log("email is good");
   }
 
-  if (!birthDateInput.validity.valueMissing){
+ // if (!birthDateInput.validity.valueMissing !== false){
+  if (birthDateInput.value !== "2022-12-31"){
     console.log("date is good");
+    errorDisplayFirst.style.display = "none";
   } else {
     ilYaUneErreur = true;
     errorDisplayBirthdate.style.display = "block";
     birthdate.classList.add("inputError");
   }
+  
   if (quantityInput.value.length >= 1){
     console.log("quantity is good");
   } else {
