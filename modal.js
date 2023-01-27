@@ -1,11 +1,31 @@
+
+  const crossMenu = document.querySelector(".crossBurgerMenu");
+  const burgerMenu = document.querySelector(".icon");
+function openBurger() {
+  burgerMenu.style.display = "none";
+  crossMenu.style.display = "flex";
+}
+function closeBurger() {
+
+  burgerMenu.style.display = "flex";
+  crossMenu.style.display = "none";
+}
+
+
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
       x.className += " responsive";
+      openBurger()
   } else {
       x.className = "topnav";
+      closeBurger()
   }
 }
+
+
+
+
 
 
 // DOM Elements

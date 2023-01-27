@@ -493,30 +493,6 @@ footer {
   width : 80%;
 }
 
-@keyframes fadeout {
-  from{
-      opacity:1;
-      transform: scale(1);
-  }
-
-  to{
-      opacity:0;
-      transform: scale(0);
-
-  }
-}
-@keyframes fadein {
-  from{
-      opacity:0;
-      transform: scale(0);
-
-  }
-
-  to{
-      opacity:1;
-      transform: scale(1);
-  }
-}
 
 @media screen and (max-width: 1024px) {
   *{
@@ -527,6 +503,10 @@ footer {
     display: block;
     color: #fe142f;
     font-size: 25px;
+  }
+
+  .fa-bars{
+    display: block;
   }
   .topnav{
     display: flex;
@@ -579,6 +559,7 @@ footer {
     transition-duration: 0.5s;
   }
   .crossBurgerMenu{
+    display: none;
     color:#fe142f;
     font-size: 35px;
     background-color: unset;
@@ -586,15 +567,6 @@ footer {
     height:1.5em;
     width:1.5em;
     transition-duration: 0.5s;
-  }
-
-
-
-.icon:focus .fa-bars{
-  display:none;
-}
-.icon:focus .crossBurgerMenu {
-  display: block;
   }
 
 
