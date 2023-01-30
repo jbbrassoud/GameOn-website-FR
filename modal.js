@@ -1,6 +1,7 @@
+// Fermeture du burger menu 
+const crossMenu = document.querySelector(".crossBurgerMenu");
+const burgerMenu = document.querySelector(".icon");
 
-  const crossMenu = document.querySelector(".crossBurgerMenu");
-  const burgerMenu = document.querySelector(".icon");
 function openBurger() {
   burgerMenu.style.display = "none";
   crossMenu.style.display = "flex";
